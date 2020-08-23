@@ -14,6 +14,7 @@ const output = {
   dir: 'dist',
   format: 'cjs',
   paths: { '@reuters-graphics/teams-klaxon': './index.js' },
+  exports: 'default',
 };
 
 export default [{

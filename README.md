@@ -11,13 +11,85 @@ $ yarn add @reuters-graphics/teams-klaxon
 ```
 
 ```javascript
-import TeamsKlaxon from '@reuters-graphics/teams-klaxon';
+const TeamsKlaxon = require('@reuters-graphics/teams-klaxon');
 
-const teamsKlaxon = new TeamsKlaxon();
+const webhook = 'https://outlook.office.com/webhook/...';
 
-teamsKlaxon.run();
+const klaxon = new TeamsKlaxon(webhook);
+
+await klaxon.log({
+  text: 'A simple message',
+});
+```
+## Message formats
+
+#### Text
+
+```javascript
+await klaxon.log({
+  text: 'A simple message',
+});
 ```
 
+![](./images/text.png)
+
+#### Facts
+
+```javascript
+await klaxon.log({
+  title: '⚙️ Testing facts',
+  facts: {
+    Name: 'Jon McClure',
+    Age: '35',
+  },
+});
+```
+
+![](./images/facts.png)
+
+#### Images
+
+```javascript
+await klaxon.log({
+  title: '⚙️ Testing images',
+  images: [
+    'https://scitechdaily.com/images/Great-White-Shark-Smile-1536x1152.jpg',
+    'https://cdn.britannica.com/79/65379-050-5CF52BAC/Shortfin-mako-shark-seas.jpg',
+  ],
+});
+```
+
+![](./images/images.png)
+
+#### Stack trace
+
+```javascript
+await klaxon.log({
+  title: '⚙️ Testing stack trace',
+  stackTrace: {
+    code: 'console.log(\'hello world\'!)',
+  },
+});
+```
+
+![](./images/stack-trace.png)
+
+#### Link buttons
+
+```javascript
+await klaxon.log({
+  title: '⚙️ Testing link buttons',
+  linkButtons: [{
+    name: 'Google',
+    link: 'https://www.google.com',
+  }, {
+    name: 'Twitter',
+    link: 'https://www.twitter.com',
+  }],
+});
+```
+
+![](./images/link-buttons.png)
 
 ## Testing
 

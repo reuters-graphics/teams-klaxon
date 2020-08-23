@@ -1,6 +1,6 @@
 {
   "name": "@reuters-graphics/teams-klaxon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/reuters-graphics/teams-klaxon",
   "author": "Jon McClure <jon.r.mcclure@gmail.com>",

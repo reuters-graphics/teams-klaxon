@@ -4,7 +4,11 @@
 
 [![npm version](https://badge.fury.io/js/%40reuters-graphics%2Fteams-klaxon.svg)](https://badge.fury.io/js/%40reuters-graphics%2Fteams-klaxon) [![Reuters open source software](https://badgen.net/badge/Reuters/open%20source/?color=ff8000)](https://github.com/reuters-graphics/)
 
+Send messages to a Microsoft Teams channel.
+
 ## Quickstart
+
+Setup a Microsoft Teams [incoming webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in a channel, then install the library.
 
 ```
 $ yarn add @reuters-graphics/teams-klaxon
@@ -13,6 +17,7 @@ $ yarn add @reuters-graphics/teams-klaxon
 ```javascript
 const TeamsKlaxon = require('@reuters-graphics/teams-klaxon');
 
+// Your incoming webhook
 const webhook = 'https://outlook.office.com/webhook/...';
 
 const klaxon = new TeamsKlaxon(webhook);

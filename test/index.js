@@ -36,7 +36,7 @@ describe('test TeamsKlaxon', function() {
     await klaxon.log({
       title: '⚙️ Testing stack trace',
       stackTrace: {
-        code: 'console.log(\'hello world\'!)',
+        code: 'console.log(\'hello world!\')',
       },
     });
   });

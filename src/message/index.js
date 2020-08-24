@@ -4,12 +4,12 @@ import getLinkButtons from './sections/linkButtons';
 import getStackTrace from './sections/stackTrace';
 import stripEmoji from 'emoji-strip';
 
-const formatMessage = ({ title, text, facts, images, stackTrace, linkButtons }) => {
+const formatMessage = ({ color = '666666', title, text, facts, images, stackTrace, linkButtons }) => {
   const message = {
     '@context': 'https://schema.org/extensions',
     '@type': 'MessageCard',
     version: '1.0',
-    themeColor: '666666',
+    themeColor: color,
     text,
   };
 

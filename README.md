@@ -72,6 +72,7 @@ await klaxon.log({
 await klaxon.log({
   title: '⚙️ Testing stack trace',
   stackTrace: {
+    title: 'Stack trace',
     code: 'console.log(\'hello world\'!)',
   },
 });
@@ -95,6 +96,47 @@ await klaxon.log({
 ```
 
 ![](./images/link-buttons.png)
+
+#### Color
+
+```javascript
+await klaxon.log({
+  title: '⚙️ Testing color',
+  color: 'FF0000'
+});
+```
+
+![](./images/color.png)
+
+#### Multiple options
+
+
+```javascript
+await klaxon.log({
+  title: '⚙️ Testing multiple options',
+  color: 'FF0000',
+  facts: {
+    Name: 'Jon McClure',
+    Age: '35',
+  },
+  images: [
+    'https://scitechdaily.com/images/Great-White-Shark-Smile-1536x1152.jpg',
+    'https://cdn.britannica.com/79/65379-050-5CF52BAC/Shortfin-mako-shark-seas.jpg',
+  ],
+  stackTrace: {
+    code: 'console.log(\'hello world!\')',
+  },
+  linkButtons: [{
+    name: 'Google',
+    link: 'https://www.google.com',
+  }, {
+    name: 'Twitter',
+    link: 'https://www.twitter.com',
+  }],
+});
+```
+
+![](./images/multiple.png)
 
 ## Testing
 

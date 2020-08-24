@@ -3,6 +3,10 @@ const schema = {
   properties: {
     title: { type: 'string' },
     text: { type: 'string' },
+    color: {
+      type: 'string',
+      pattern: '^[A-Fa-f0-9]{6}$',
+    },
     facts: {
       type: 'object',
       patternProperties: {

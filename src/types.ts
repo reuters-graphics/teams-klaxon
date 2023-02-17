@@ -7,6 +7,9 @@ export type Size = 'Small' | 'Default' | 'Medium' | 'Large' | 'ExtraLarge';
 export type HorizontalAlignment = 'Left' | 'Center' | 'Right';
 export type VerticalAlignment = 'Top' | 'Center' | 'Bottom';
 
+/**
+ * @see {@link index.Elements.TextBlock Elements.TextBlock}
+ */
 export interface TextBlock {
   type: 'TextBlock';
   text: string;
@@ -22,11 +25,17 @@ export interface TextBlock {
   id?: string;
 };
 
+/**
+ * @see {@link index.Elements.Fact Elements.Fact}
+ */
 export interface Fact {
   title: string;
   value: string;
 }
 
+/**
+ * @see {@link index.Elements.FactSet Elements.FactSet}
+ */
 export interface FactSet {
   type: 'FactSet';
   facts: Fact[];
@@ -44,6 +53,9 @@ export interface SelectActionOpenUrl {
 
 export type ImageSize = 'Small' | 'Medium' | 'Large';
 
+/**
+ * @see {@link index.Elements.Image Elements.Image}
+ */
 export interface Image {
   type: 'Image';
   url: string;
@@ -53,6 +65,9 @@ export interface Image {
   selectAction?: SelectActionOpenUrl;
 }
 
+/**
+ * @see {@link index.Elements.ImageSet Elements.ImageSet}
+ */
 export interface ImageSet {
   type: 'ImageSet';
   images: Image[];
@@ -64,8 +79,14 @@ export interface ImageSet {
   horizontalAlignment?: HorizontalAlignment;
 }
 
+/**
+ * @see {@link index.Elements.ActionOpenUrl Elements.ActionOpenUrl}
+ */
 export type ActionOpenUrl = SelectActionOpenUrl;
 
+/**
+ * @see {@link index.Elements.ActionSet Elements.ActionSet}
+ */
 export interface ActionSet {
   type: 'ActionSet';
   actions: ActionOpenUrl[];

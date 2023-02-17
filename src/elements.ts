@@ -3,6 +3,8 @@ import * as types from './types';
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.TextBlock('👋 Hello _world_!');
  * ```
  * 
@@ -20,6 +22,8 @@ export const TextBlock = (text: string, options: Omit<types.TextBlock, 'type' | 
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.Fact('name', 'Jane Doe');
  * ```
  * 
@@ -37,6 +41,8 @@ export const Fact = (title: string, value: string) => {
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.FactSet([
  *   Elements.Fact('name', 'Jane Doe'),
  *   Elements.Fact('age', '33'),
@@ -56,6 +62,8 @@ export const FactSet = (facts: types.Fact[], options: Omit<types.FactSet, 'type'
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.Image('https://.../image.jpg');
  * ```
  * 
@@ -75,6 +83,8 @@ export const Image = (url: string, openUrl: string, options: Omit<types.Image, '
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.ImageSet([
  *   Elements.Image('https://...'),
  *   Elements.Image('https://...'),
@@ -95,6 +105,8 @@ export const ImageSet = (images: types.Image[], options: Omit<types.ImageSet, 't
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.ActionOpenUrl('https://...', 'My site');
  * ```
  * 
@@ -115,6 +127,8 @@ export const ActionOpenUrl = (url: string, title: string) => {
 /**
  * @example
  * ```javascript
+ * import { Elements } from '@reuters-graphics/teams-klaxons';
+ * 
  * Elements.ActionSet([
  *   Elements.ActionOpenUrl('https://...', 'My site'),
  *   Elements.ActionOpenUrl('https://...', 'My other site'),

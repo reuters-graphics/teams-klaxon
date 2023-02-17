@@ -1,0 +1,23 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "include": ["src/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist",
+    "noEmitOnError": true,
+    "target": "ESNext"
+  },
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts", "src/types.ts"],
+    "out": "docs",
+    "cleanOutputDir": true,
+    "darkHighlightTheme": "github-dark",
+    "lightHighlightTheme": "github-light",
+    "sort": ["required-first"],
+    "disableSources": true
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@reuters-graphics/teams-klaxon</title><meta name="description" content="Documentation for @reuters-graphics/teams-klaxon"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@reuters-graphics/teams-klaxon</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>@reuters-graphics/teams-klaxon</h2></div>
+<div class="tsd-panel tsd-typography"><p><img src="badge.svg" alt=""></p>
+
+<a href="#reuters-graphicsteams-klaxon" id="reuters-graphicsteams-klaxon" style="color: inherit; text-decoration: none;">
+  <h1>@reuters-graphics/teams-klaxon</h1>
+</a>
+<p><a href="https://badge.fury.io/js/%40reuters-graphics%2Fteams-klaxon"><img src="https://badge.fury.io/js/%40reuters-graphics%2Fteams-klaxon.svg" alt="npm version"></a> <a href="https://github.com/reuters-graphics/"><img src="https://badgen.net/badge/Reuters/open%20source/?color=ff8000" alt="Reuters open source software"></a></p>
+<p>Send messages to a Microsoft Teams channel.</p>
+
+<a href="#quickstart" id="quickstart" style="color: inherit; text-decoration: none;">
+  <h2>Quickstart</h2>
+</a>
+<p>Setup a Microsoft Teams <a href="https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook">incoming webhook</a> in a channel, then install the library.</p>
+<pre><code><span class="hl-0">$ yarn add @reuters</span><span class="hl-1">-</span><span class="hl-0">graphics</span><span class="hl-1">/</span><span class="hl-0">teams</span><span class="hl-1">-</span><span class="hl-0">klaxon</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">TeamsKlaxon</span><span class="hl-0"> </span><span class="hl-1">=</span><span class="hl-0"> </span><span class="hl-3">require</span><span class="hl-0">(</span><span class="hl-4">&#39;@reuters-graphics/teams-klaxon&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-5">// Your incoming webhook</span><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">webhook</span><span class="hl-0"> </span><span class="hl-1">=</span><span class="hl-0"> </span><span class="hl-4">&#39;https://outlook.office.com/webhook/...&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">klaxon</span><span class="hl-0"> </span><span class="hl-1">=</span><span class="hl-0"> </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">TeamsKlaxon</span><span class="hl-0">(webhook);</span><br/><br/><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  text: </span><span class="hl-4">&#39;A simple message&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">});</span>
+</code></pre>
+
+<a href="#message-formats" id="message-formats" style="color: inherit; text-decoration: none;">
+  <h2>Message formats</h2>
+</a>
+
+<a href="#text" id="text" style="color: inherit; text-decoration: none;">
+  <h4>Text</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  text: </span><span class="hl-4">&#39;A simple message&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/text.png" alt=""></p>
+
+<a href="#facts" id="facts" style="color: inherit; text-decoration: none;">
+  <h4>Facts</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  title: </span><span class="hl-4">&#39;⚙️ Testing facts&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  facts: {</span><br/><span class="hl-0">    Name: </span><span class="hl-4">&#39;Jon McClure&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    Age: </span><span class="hl-4">&#39;35&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/facts.png" alt=""></p>
+
+<a href="#images" id="images" style="color: inherit; text-decoration: none;">
+  <h4>Images</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  title: </span><span class="hl-4">&#39;⚙️ Testing images&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  images: [</span><br/><span class="hl-0">    </span><span class="hl-4">&#39;https://scitechdaily.com/images/Great-White-Shark-Smile-1536x1152.jpg&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">&#39;https://cdn.britannica.com/79/65379-050-5CF52BAC/Shortfin-mako-shark-seas.jpg&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  ],</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/images.png" alt=""></p>
+
+<a href="#stack-trace" id="stack-trace" style="color: inherit; text-decoration: none;">
+  <h4>Stack trace</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  title: </span><span class="hl-4">&#39;⚙️ Testing stack trace&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  stackTrace: {</span><br/><span class="hl-0">    title: </span><span class="hl-4">&#39;Stack trace&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    code: </span><span class="hl-4">&#39;console.log(</span><span class="hl-2">\&#39;</span><span class="hl-4">hello world</span><span class="hl-2">\&#39;</span><span class="hl-4">!)&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/stack-trace.png" alt=""></p>
+
+<a href="#link-buttons" id="link-buttons" style="color: inherit; text-decoration: none;">
+  <h4>Link buttons</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  title: </span><span class="hl-4">&#39;⚙️ Testing link buttons&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  linkButtons: [{</span><br/><span class="hl-0">    name: </span><span class="hl-4">&#39;Google&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    link: </span><span class="hl-4">&#39;https://www.google.com&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  }, {</span><br/><span class="hl-0">    name: </span><span class="hl-4">&#39;Twitter&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    link: </span><span class="hl-4">&#39;https://www.twitter.com&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  }],</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/link-buttons.png" alt=""></p>
+
+<a href="#color" id="color" style="color: inherit; text-decoration: none;">
+  <h4>Color</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  title: </span><span class="hl-4">&#39;⚙️ Testing color&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  color: </span><span class="hl-4">&#39;FF0000&#39;</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/color.png" alt=""></p>
+
+<a href="#multiple-options" id="multiple-options" style="color: inherit; text-decoration: none;">
+  <h4>Multiple options</h4>
+</a>
+<pre><code class="language-javascript"><span class="hl-1">await</span><span class="hl-0"> klaxon.</span><span class="hl-3">log</span><span class="hl-0">({</span><br/><span class="hl-0">  title: </span><span class="hl-4">&#39;⚙️ Testing multiple options&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  color: </span><span class="hl-4">&#39;FF0000&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  facts: {</span><br/><span class="hl-0">    Name: </span><span class="hl-4">&#39;Jon McClure&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    Age: </span><span class="hl-4">&#39;35&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">  images: [</span><br/><span class="hl-0">    </span><span class="hl-4">&#39;https://scitechdaily.com/images/Great-White-Shark-Smile-1536x1152.jpg&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-4">&#39;https://cdn.britannica.com/79/65379-050-5CF52BAC/Shortfin-mako-shark-seas.jpg&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  ],</span><br/><span class="hl-0">  stackTrace: {</span><br/><span class="hl-0">    code: </span><span class="hl-4">&#39;console.log(</span><span class="hl-2">\&#39;</span><span class="hl-4">hello world!</span><span class="hl-2">\&#39;</span><span class="hl-4">)&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">  linkButtons: [{</span><br/><span class="hl-0">    name: </span><span class="hl-4">&#39;Google&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    link: </span><span class="hl-4">&#39;https://www.google.com&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  }, {</span><br/><span class="hl-0">    name: </span><span class="hl-4">&#39;Twitter&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">    link: </span><span class="hl-4">&#39;https://www.twitter.com&#39;</span><span class="hl-0">,</span><br/><span class="hl-0">  }],</span><br/><span class="hl-0">});</span>
+</code></pre>
+<p><img src="./images/multiple.png" alt=""></p>
+
+<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
+  <h2>Testing</h2>
+</a>
+<pre><code><span class="hl-0">$ yarn test</span>
+</code></pre>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current selected"><a href="modules.html">@reuters-<wbr/>graphics/teams-<wbr/>klaxon</a>
+<ul>
+<li class="tsd-kind-module"><a href="modules/index.html">index</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/index.Elements.html">Elements</a></li></ul></li>
+<li class="tsd-kind-module"><a href="modules/types.html">types</a></li></ul></li></ul></div></details></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="assets/main.js"></script></body></html>

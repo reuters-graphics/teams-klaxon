@@ -108,7 +108,7 @@ jobs:
         name: Build docs
         run: |
           yarn build:docs
-          git commit -am "${{ github.ref_name }} docs"
+          git commit --allow-empty -am "${{ github.ref_name }} docs"
 
       - id: version
         name: Version

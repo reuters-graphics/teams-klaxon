@@ -10,15 +10,13 @@
   "private": false,
   "keywords": [],
   "files": [
-    "dist/**/*",
-    "badge.svg"
+    "dist/**/*"
   ],
   "scripts": {
     "prepublishOnly": "yarn test",
     "build": "rimraf ./dist && rollup -c rollup.config.js",
     "build:docs": "typedoc",
     "preview:docs": "live-server ./docs",
-    "prettify": "prettier --write ./src/** ./test/**",
     "test": "yarn build && mocha",
     "test:demo": "yarn build && DEMO_TESTS=1 mocha"
   },

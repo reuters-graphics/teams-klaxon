@@ -93,6 +93,17 @@ describe('TeamsKlaxon tests', function () {
     expect(isValid).to.be(true);
   });
 
+  it('Should validate ActionSet', async function () {
+    klaxon.makeCard([
+      Elements.ActionSet([
+        Elements.ActionOpenUrl('https://www.google.com', 'Google'),
+        Elements.ActionOpenUrl('https://www.wikipedia.org', 'Wikipedia'),
+      ]),
+    ]);
+    const isValid = klaxon.cardIsValid();
+    expect(isValid).to.be(true);
+  });
+
   it('Should validate a buncha elements', async function () {
     const columns = Elements.ColumnSet([
       Elements.Column(

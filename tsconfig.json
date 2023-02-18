@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
-  "include": ["src/*"],
+  "include": ["src/*", "test/*.js"],
   "exclude": ["dist"],
   "compilerOptions": {
     "moduleResolution": "node",
@@ -9,6 +9,7 @@
     "declaration": true,
     "declarationDir": "dist",
     "noEmitOnError": true,
+    "resolveJsonModule": true,
     "target": "ESNext"
   },
   "typedocOptions": {

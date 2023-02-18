@@ -1,6 +1,19 @@
-export type Color = 'Default' | 'Dark' | 'Light' | 'Accent' | 'Good' | 'Warning' | 'Attention';
+export type Color =
+  | 'Default'
+  | 'Dark'
+  | 'Light'
+  | 'Accent'
+  | 'Good'
+  | 'Warning'
+  | 'Attention';
 export type FontType = 'Default' | 'Monospace';
-export type Spacing = 'None' | 'Small' | 'Medium' | 'Large' | 'ExtraLarge' | 'Padding';
+export type Spacing =
+  | 'None'
+  | 'Small'
+  | 'Medium'
+  | 'Large'
+  | 'ExtraLarge'
+  | 'Padding';
 export type Weight = 'Lighter' | 'Default' | 'Bolder';
 export type Size = 'Small' | 'Default' | 'Medium' | 'Large' | 'ExtraLarge';
 
@@ -23,7 +36,7 @@ export interface TextBlock {
   spacing?: Spacing;
   height?: 'stretch';
   id?: string;
-};
+}
 
 /**
  * @see {@link index.Elements.Fact Elements.Fact}
@@ -101,7 +114,10 @@ export interface BackgroundImage {
   url: string;
   horizontalAlignment?: HorizontalAlignment;
   verticalAlignment?: VerticalAlignment;
-  fillMode: 'Repeat' | 'RepeatVertically' | 'RepeatHorizontally';
+  /**
+   * Unset represents a default of "Cover".
+   */
+  fillMode?: 'Repeat' | 'RepeatVertically' | 'RepeatHorizontally';
 }
 
 export interface Container {
@@ -121,10 +137,10 @@ export interface Column {
   height?: 'stretch';
   id?: string;
   horizontalAlignment?: HorizontalAlignment;
-  /** 
+  /**
    * Width of the column.
-   * 
-   * Example: `'auto'`, `'stretch'`, `'60px'`, `50`
+   *
+   * Example: `'auto'`, `'stretch'`, `'60px'`, `50` (percent)
    **/
   width?: string | number;
   /** Example: `'50px'` */
@@ -146,7 +162,14 @@ export interface ColumnSet {
 /**
  * Possible card content items.
  */
-export type ContentItem = Image | ImageSet | TextBlock | FactSet | ActionSet | Container | ColumnSet;
+export type ContentItem =
+  | Image
+  | ImageSet
+  | TextBlock
+  | FactSet
+  | ActionSet
+  | Container
+  | ColumnSet;
 
 /**
  * Adaptive card content
@@ -168,7 +191,7 @@ export interface AdaptiveCard {
 }
 
 /**
- * A Team's Incoming Webhook message 
+ * A Team's Incoming Webhook message
  */
 export interface Message {
   type: 'message';

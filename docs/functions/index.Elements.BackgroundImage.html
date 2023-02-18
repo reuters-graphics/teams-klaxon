@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <title>FactSet | @reuters-graphics/teams-klaxon</title>
+    <title>BackgroundImage | @reuters-graphics/teams-klaxon</title>
     <meta
       name="description"
       content="Documentation for @reuters-graphics/teams-klaxon"
@@ -84,45 +84,43 @@
             </li>
             <li><a href="../modules/index.html">index</a></li>
             <li><a href="../modules/index.Elements.html">Elements</a></li>
-            <li><a href="index.Elements.FactSet.html">FactSet</a></li>
+            <li>
+              <a href="index.Elements.BackgroundImage.html">BackgroundImage</a>
+            </li>
           </ul>
-          <h1>Function FactSet</h1>
+          <h1>Function BackgroundImage</h1>
         </div>
         <section class="tsd-panel">
           <ul
             class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace"
           >
-            <li class="tsd-signature tsd-anchor-link" id="FactSet">
-              Fact<wbr />Set<span class="tsd-signature-symbol">(</span
-              >facts<span class="tsd-signature-symbol">: </span
-              ><a
-                href="../interfaces/types.Fact.html"
-                class="tsd-signature-type"
-                data-tsd-kind="Interface"
-                >Fact</a
-              ><span class="tsd-signature-symbol">[]</span>, options<span
+            <li class="tsd-signature tsd-anchor-link" id="BackgroundImage">
+              Background<wbr />Image<span class="tsd-signature-symbol">(</span
+              >url<span class="tsd-signature-symbol">: </span
+              ><span class="tsd-signature-type">string</span>, options<span
                 class="tsd-signature-symbol"
                 >?: </span
               ><span class="tsd-signature-type">Omit</span
               ><span class="tsd-signature-symbol">&lt;</span
               ><a
-                href="../interfaces/types.FactSet.html"
+                href="../interfaces/types.BackgroundImage.html"
                 class="tsd-signature-type"
                 data-tsd-kind="Interface"
-                >FactSet</a
+                >BackgroundImage</a
               ><span class="tsd-signature-symbol">, </span
-              ><span class="tsd-signature-type">&quot;type&quot;</span
-              ><span class="tsd-signature-symbol"> | </span
-              ><span class="tsd-signature-type">&quot;facts&quot;</span
+              ><span class="tsd-signature-type">&quot;url&quot;</span
               ><span class="tsd-signature-symbol">&gt;</span
               ><span class="tsd-signature-symbol">)</span
               ><span class="tsd-signature-symbol">: </span
               ><a
-                href="../interfaces/types.FactSet.html"
+                href="../interfaces/types.BackgroundImage.html"
                 class="tsd-signature-type"
                 data-tsd-kind="Interface"
-                >FactSet</a
-              ><a href="#FactSet" aria-label="Permalink" class="tsd-anchor-icon"
+                >BackgroundImage</a
+              ><a
+                href="#BackgroundImage"
+                aria-label="Permalink"
+                class="tsd-anchor-icon"
                 ><svg
                   class="icon icon-tabler icon-tabler-link"
                   viewBox="0 0 24 24"
@@ -151,23 +149,22 @@
             <li class="tsd-description">
               <div class="tsd-comment tsd-typography">
                 <h3>Example</h3>
-                <pre><code class="language-javascript"><span class="hl-1">import</span><span class="hl-0"> { Elements } </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&#39;@reuters-graphics/teams-klaxons&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-0">Elements.</span><span class="hl-3">FactSet</span><span class="hl-0">([</span><br/><span class="hl-0">  Elements.</span><span class="hl-3">Fact</span><span class="hl-0">(</span><span class="hl-4">&#39;name&#39;</span><span class="hl-0">, </span><span class="hl-4">&#39;Jane Doe&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">  Elements.</span><span class="hl-3">Fact</span><span class="hl-0">(</span><span class="hl-4">&#39;age&#39;</span><span class="hl-0">, </span><span class="hl-4">&#39;33&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">]);</span>
+                <pre><code class="language-javascript"><span class="hl-1">import</span><span class="hl-0"> { Elements } </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&#39;@reuters-graphics/teams-klaxons&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">backgroundImage</span><span class="hl-0"> </span><span class="hl-1">=</span><span class="hl-0"> Elements.</span><span class="hl-3">BackgroundImage</span><span class="hl-0">(</span><span class="hl-4">&#39;https://.../image.jpg&#39;</span><span class="hl-0">);</span><br/><br/><span class="hl-0">Elements.</span><span class="hl-3">Container</span><span class="hl-0">([</span><br/><span class="hl-0">  Element.</span><span class="hl-3">TextBox</span><span class="hl-0">(</span><span class="hl-4">&#39;Hello&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">], { backgroundImage });</span>
 </code></pre>
+                <p>
+                  <strong>Note:</strong> Use this element within a
+                  <a href="index.Elements.Container.html">Container</a>, not on
+                  its own.
+                </p>
               </div>
               <div class="tsd-parameters">
                 <h4 class="tsd-parameters-title">Parameters</h4>
                 <ul class="tsd-parameter-list">
                   <li>
-                    <h5>
-                      facts:
-                      <a
-                        href="../interfaces/types.Fact.html"
-                        class="tsd-signature-type"
-                        data-tsd-kind="Interface"
-                        >Fact</a
-                      ><span class="tsd-signature-symbol">[]</span>
-                    </h5>
-                    <div class="tsd-comment tsd-typography"><p>Facts</p></div>
+                    <h5>url: <span class="tsd-signature-type">string</span></h5>
+                    <div class="tsd-comment tsd-typography">
+                      <p>Image URL</p>
+                    </div>
                   </li>
                   <li>
                     <h5>
@@ -175,20 +172,20 @@
                       options: <span class="tsd-signature-type">Omit</span
                       ><span class="tsd-signature-symbol">&lt;</span
                       ><a
-                        href="../interfaces/types.FactSet.html"
+                        href="../interfaces/types.BackgroundImage.html"
                         class="tsd-signature-type"
                         data-tsd-kind="Interface"
-                        >FactSet</a
+                        >BackgroundImage</a
                       ><span class="tsd-signature-symbol">, </span
-                      ><span class="tsd-signature-type">&quot;type&quot;</span
-                      ><span class="tsd-signature-symbol"> | </span
-                      ><span class="tsd-signature-type">&quot;facts&quot;</span
+                      ><span class="tsd-signature-type">&quot;url&quot;</span
                       ><span class="tsd-signature-symbol">&gt;</span>
                     </h5>
                     <div class="tsd-comment tsd-typography">
                       <p>
-                        Additional
-                        <a href="../interfaces/types.FactSet.html">FactSet</a>
+                        Addition
+                        <a href="../interfaces/types.BackgroundImage.html"
+                          >BackgroundImage</a
+                        >
                         options
                       </p>
                     </div>
@@ -198,10 +195,10 @@
               <h4 class="tsd-returns-title">
                 Returns
                 <a
-                  href="../interfaces/types.FactSet.html"
+                  href="../interfaces/types.BackgroundImage.html"
                   class="tsd-signature-type"
                   data-tsd-kind="Interface"
-                  >FactSet</a
+                  >BackgroundImage</a
                 >
               </h4>
             </li>
@@ -451,7 +448,7 @@
                 >Fact</a
               >
             </li>
-            <li class="current tsd-kind-function tsd-parent-kind-namespace">
+            <li class="tsd-kind-function tsd-parent-kind-namespace">
               <a href="index.Elements.FactSet.html" class="tsd-index-link"
                 ><svg
                   class="tsd-kind-icon"
@@ -516,7 +513,7 @@
                 >Action<wbr />Set</a
               >
             </li>
-            <li class="tsd-kind-function tsd-parent-kind-namespace">
+            <li class="current tsd-kind-function tsd-parent-kind-namespace">
               <a
                 href="index.Elements.BackgroundImage.html"
                 class="tsd-index-link"

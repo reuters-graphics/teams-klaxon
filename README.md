@@ -26,6 +26,7 @@ await klaxon.log({
   text: 'A simple message',
 });
 ```
+
 ## Message formats
 
 #### Text
@@ -73,7 +74,7 @@ await klaxon.log({
   title: '⚙️ Testing stack trace',
   stackTrace: {
     title: 'Stack trace',
-    code: 'console.log(\'hello world\'!)',
+    code: "console.log('hello world'!)",
   },
 });
 ```
@@ -85,13 +86,16 @@ await klaxon.log({
 ```javascript
 await klaxon.log({
   title: '⚙️ Testing link buttons',
-  linkButtons: [{
-    name: 'Google',
-    link: 'https://www.google.com',
-  }, {
-    name: 'Twitter',
-    link: 'https://www.twitter.com',
-  }],
+  linkButtons: [
+    {
+      name: 'Google',
+      link: 'https://www.google.com',
+    },
+    {
+      name: 'Twitter',
+      link: 'https://www.twitter.com',
+    },
+  ],
 });
 ```
 
@@ -102,14 +106,13 @@ await klaxon.log({
 ```javascript
 await klaxon.log({
   title: '⚙️ Testing color',
-  color: 'FF0000'
+  color: 'FF0000',
 });
 ```
 
 ![](./images/color.png)
 
 #### Multiple options
-
 
 ```javascript
 await klaxon.log({
@@ -124,15 +127,18 @@ await klaxon.log({
     'https://cdn.britannica.com/79/65379-050-5CF52BAC/Shortfin-mako-shark-seas.jpg',
   ],
   stackTrace: {
-    code: 'console.log(\'hello world!\')',
+    code: "console.log('hello world!')",
   },
-  linkButtons: [{
-    name: 'Google',
-    link: 'https://www.google.com',
-  }, {
-    name: 'Twitter',
-    link: 'https://www.twitter.com',
-  }],
+  linkButtons: [
+    {
+      name: 'Google',
+      link: 'https://www.google.com',
+    },
+    {
+      name: 'Twitter',
+      link: 'https://www.twitter.com',
+    },
+  ],
 });
 ```
 

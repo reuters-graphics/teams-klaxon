@@ -38,6 +38,14 @@ export class TeamsKlaxon {
 
   /**
    * Make an adaptive card.
+   *
+   * @example
+   * ```javascript
+   * klaxon.makeCard([
+   *   Elements.TextBlock('Hello _world_!'),
+   * ]);
+   * ```
+   *
    * @param contentItems Card contents
    */
   makeCard(contentItems: ContentItem[]) {
@@ -67,6 +75,17 @@ export class TeamsKlaxon {
 
   /**
    * Verify a card is valid.
+   *
+   * @example
+   * ```javascript
+   * klaxon.makeCard([
+   *   Elements.TextBlock('Hello _world_!'),
+   * ]);
+   *
+   * klaxon.cardIsValid();
+   * // true
+   * ```
+   *
    * @returns {Boolean}
    */
   cardIsValid() {
@@ -75,7 +94,18 @@ export class TeamsKlaxon {
 
   /**
    * Post your card to Teams.
-   * @returns
+   *
+   * @example
+   * ```javascript
+   * klaxon.makeCard([
+   *   Elements.TextBlock('Hello _world_!'),
+   * ]);
+   *
+   * const response = await klaxon.postCard();
+   *
+   * response.status
+   * // 200
+   * ```
    */
   async postCard() {
     if (!this._card) throw new Error('No card made yet');

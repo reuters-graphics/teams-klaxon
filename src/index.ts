@@ -1,4 +1,4 @@
-import * as Elements from './elements.js';
+import * as Elements from './elements';
 
 import type {
   AdaptiveCard,

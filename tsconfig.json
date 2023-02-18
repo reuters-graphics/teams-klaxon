@@ -19,6 +19,12 @@
     "darkHighlightTheme": "github-dark",
     "lightHighlightTheme": "github-light",
     "sort": ["required-first"],
-    "disableSources": true
+    "disableSources": true,
+    "titleLink": "https://reuters-graphics.github.io/teams-klaxon/",
+    "navigationLinks": {
+      "GitHub": "https://github.com/reuters-graphics/teams-klaxon/",
+      "npm": "https://www.npmjs.com/package/@reuters-graphics/teams-klaxon/"
+    },
+    "readme": "HOME.md"
   }
 }

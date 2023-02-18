@@ -2,35 +2,54 @@
   "name": "@reuters-graphics/teams-klaxon",
   "version": "0.0.3",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "repository": "https://github.com/reuters-graphics/teams-klaxon",
   "author": "Jon McClure <jon.r.mcclure@gmail.com>",
   "license": "MIT",
   "private": false,
   "keywords": [],
   "files": [
-    "dist/**/*",
-    "badge.svg"
+    "dist/**/*"
   ],
   "scripts": {
     "prepublishOnly": "yarn test",
-    "build": "rollup --config rollup.config.js",
-    "test": "yarn build && mocha"
+    "build": "rimraf ./dist && rollup -c rollup.config.js",
+    "build:docs": "typedoc",
+    "preview:docs": "live-server ./docs",
+    "test": "yarn build && mocha",
+    "test:demo": "yarn build && DEMO_TESTS=1 mocha"
   },
   "devDependencies": {
     "@reuters-graphics/eslint-config": "^0.0.2",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^8.0.1",
-    "dotenv": "^8.2.0",
-    "eslint": "^6.8.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
     "expect.js": "^0.3.1",
-    "mocha": "^7.1.2",
-    "rollup": "^2.10.5",
-    "rollup-plugin-node-externals": "^2.2.0",
-    "rollup-plugin-size-snapshot": "^0.12.0"
+    "lefthook": "^1.2.9",
+    "live-server": "1.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.17.0",
+    "rollup-plugin-dts": "^5.2.0",
+    "tslib": "^2.5.0",
+    "typedoc": "^0.23.25",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "ajv": "^6.12.4",
-    "axios": "^0.20.0",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
     "emoji-strip": "^1.0.1"
   }
 }

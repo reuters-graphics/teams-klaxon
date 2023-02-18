@@ -1,24 +1,19 @@
-import externals from 'rollup-plugin-node-externals';
+import dts from 'rollup-plugin-dts';
 import json from '@rollup/plugin-json';
-import resolve from '@rollup/plugin-node-resolve';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import typescript from '@rollup/plugin-typescript';
 
-const plugins = [
-  resolve({ preferBuiltins: true, modulesOnly: true }),
-  json(),
-  externals({ deps: true }),
-  sizeSnapshot(),
+const config = [
+  {
+    input: './src/types.ts',
+    output: { file: 'dist/types.d.ts' },
+    plugins: [dts()],
+  },
+  {
+    input: './src/index.ts',
+    output: { dir: 'dist' },
+    external: ['axios', 'ajv', 'ajv-formats'],
+    plugins: [json(), typescript()],
+  },
 ];
 
-const output = {
-  dir: 'dist',
-  format: 'cjs',
-  paths: { '@reuters-graphics/teams-klaxon': './index.js' },
-  exports: 'default',
-};
-
-export default [{
-  input: 'src/index.js',
-  output,
-  plugins,
-}];
+export default config;

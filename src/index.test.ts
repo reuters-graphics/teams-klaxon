@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { Elements, TeamsKlaxon } from './index.js';
 
 const klaxon = new TeamsKlaxon('');
+const webhookUrl = process.env.TEST_WEBHOOK || '';
 
 describe('TeamsKlaxon tests', () => {
   it('Should validate TextBlock elements', () => {
@@ -137,4 +138,48 @@ describe('TeamsKlaxon tests', () => {
     const isValid = klaxon.cardIsValid();
     expect(isValid).toBe(true);
   });
+
+  it.skipIf(process.env.CI)(
+    'Should post an adaptive card to Teams channel',
+    async () => {
+      if (!webhookUrl) {
+        console.log('Skipping Teams post test - TEAMS_WEBHOOK not set');
+        return;
+      }
+
+      const teamsKlaxon = new TeamsKlaxon(webhookUrl);
+
+      teamsKlaxon.makeCard([
+        Elements.TextBlock('✅ Test of adaptive card post', {
+          size: 'Large',
+          weight: 'Bolder',
+        }),
+        Elements.TextBlock(
+          '**Test from teams-klaxon library**\n\nThis is a test message with an image.'
+        ),
+        Elements.Image(
+          'https://www.reuters.com/graphics/TJX-RESULTS/dwvkdeoempm/chart.png'
+        ),
+        Elements.FactSet([
+          Elements.Fact('Test Status', 'Success'),
+          Elements.Fact('Time', new Date().toISOString()),
+          Elements.Fact('Link', `[google](https://www.google.com)`),
+        ]),
+        Elements.ActionSet([
+          Elements.ActionOpenUrl(`https://www.reuters.com`, 'Go to Reuters'),
+          Elements.ActionOpenUrl(
+            `https://www.github.com/reuters-graphics/`,
+            'Go to GitHub'
+          ),
+        ]),
+      ]);
+
+      const isValid = teamsKlaxon.cardIsValid();
+      expect(isValid).toBe(true);
+
+      const response = await teamsKlaxon.postCard();
+      // Teams webhooks return either 200 or 202 (Accepted) on success
+      expect(response?.status).toEqual(202);
+    }
+  );
 });

@@ -172,7 +172,7 @@ export type ContentItem =
   | ColumnSet;
 
 /**
- * Adaptive card content
+ * Adaptive card content for Teams Workflows
  */
 export interface AdaptiveCardContent {
   $schema: 'http://adaptivecards.io/schemas/adaptive-card.json';
@@ -182,7 +182,7 @@ export interface AdaptiveCardContent {
 }
 
 /**
- * Adaptive card
+ * Adaptive card attachment format
  */
 export interface AdaptiveCard {
   contentType: 'application/vnd.microsoft.card.adaptive';
@@ -191,7 +191,7 @@ export interface AdaptiveCard {
 }
 
 /**
- * A Team's Incoming Webhook message
+ * Teams Workflow message format with attachments
  */
 export interface Message {
   type: 'message';

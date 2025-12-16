@@ -4,19 +4,29 @@ Create and send [Adaptive Cards](https://adaptivecards.io/) to a Microsoft Teams
 
 ## Usage
 
-Setup a Microsoft Teams [incoming webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in a channel, then install the library.
+### Setting up a Teams Webhook
+
+Create an [incoming webhook with Workflows](https://support.microsoft.com/en-us/office/create-incoming-webhooks-with-workflows-for-microsoft-teams-8ae491c7-0394-4861-ba59-055e33f75498) for Microsoft Teams:
+
+1. In your Teams channel, click the **...** menu and select **Workflows**
+2. Search for "Post to a channel when a webhook request is received"
+3. Configure the workflow to post to your desired channel and copy the webhook URL
+
+### Installation
 
 ```bash
-yarn add @reuters-graphics/teams-klaxon
+pnpm add @reuters-graphics/teams-klaxon
 ```
+
+### Basic Usage
 
 Import and create a new `TeamsKlaxon` instance with your webhook URL.
 
 ```javascript
 import { TeamsKlaxon } from '@reuters-graphics/teams-klaxon';
 
-// Your incoming webhook
-const webhook = 'https://outlook.office.com/webhook/...';
+// Your Teams Workflow webhook URL
+const webhook = 'https://...';
 
 const klaxon = new TeamsKlaxon(webhook);
 ```
@@ -49,7 +59,7 @@ klaxon.makeCard(cardContent);
 const response = await klaxon.postCard();
 
 response.status;
-// 200
+// 202
 ```
 
 **[Read the API docs](https://reuters-graphics.github.io/teams-klaxon/modules/index.html) for more info.**

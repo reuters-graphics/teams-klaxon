@@ -25,12 +25,16 @@ export class TeamsKlaxon {
   _card?: AdaptiveCardContent;
 
   /**
+   * Create a new TeamsKlaxon instance with your Teams Workflow webhook URL.
+   *
+   * Note: This library uses the attachments format which works with most Teams Workflows.
+   *
    * @example
    * ```javascript
-   * const klaxon = new TeamsKlaxon('https://trten.webhook.office.com/...');
+   * const klaxon = new TeamsKlaxon('https://prod.workflows.office.com/webhook/...');
    * ```
    *
-   * @param webhook A Teams [Incoming Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=dotnet)
+   * @param webhook A Teams Workflow webhook URL
    */
   constructor(webhook: string) {
     this._webhook = webhook;
@@ -86,7 +90,7 @@ export class TeamsKlaxon {
    * // true
    * ```
    *
-   * @returns {Boolean}
+   * @returns
    */
   cardIsValid() {
     return validate(this._card);
@@ -104,7 +108,7 @@ export class TeamsKlaxon {
    * const response = await klaxon.postCard();
    *
    * response.status
-   * // 200
+   * // 202
    * ```
    */
   async postCard() {

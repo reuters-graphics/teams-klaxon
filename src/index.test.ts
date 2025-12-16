@@ -1,19 +1,16 @@
-import { Elements, TeamsKlaxon } from '../dist/index.js';
-
-import expect from 'expect.js';
+import { describe, it, expect } from 'vitest';
+import { Elements, TeamsKlaxon } from './index.js';
 
 const klaxon = new TeamsKlaxon('');
 
-describe('TeamsKlaxon tests', function () {
-  this.timeout(30000);
-
-  it('Should validate TextBlock elements', async function () {
+describe('TeamsKlaxon tests', () => {
+  it('Should validate TextBlock elements', () => {
     klaxon.makeCard([Elements.TextBlock("Hello **world**!\n\nI'm a bot.")]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should validate Factset elements', async function () {
+  it('Should validate Factset elements', () => {
     klaxon.makeCard([
       Elements.TextBlock("Hello **world**!\n\nI'm a bot."),
       Elements.FactSet([
@@ -22,10 +19,10 @@ describe('TeamsKlaxon tests', function () {
       ]),
     ]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should validate Image elements', async function () {
+  it('Should validate Image elements', () => {
     klaxon.makeCard([
       Elements.Image(
         'https://www.reuters.com/graphics/TJX-RESULTS/dwvkdeoempm/chart.png'
@@ -36,16 +33,16 @@ describe('TeamsKlaxon tests', function () {
       ),
     ]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should not validate Image with bad URLs', async function () {
+  it('Should not validate Image with bad URLs', () => {
     klaxon.makeCard([Elements.Image('aa bb cc')]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(false);
+    expect(isValid).toBe(false);
   });
 
-  it('Should validate ImageSet elements', async function () {
+  it('Should validate ImageSet elements', () => {
     klaxon.makeCard([
       Elements.ImageSet([
         Elements.Image(
@@ -58,10 +55,10 @@ describe('TeamsKlaxon tests', function () {
       ]),
     ]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should validate Container elements', async function () {
+  it('Should validate Container elements', () => {
     const backgroundImage = Elements.BackgroundImage(
       'https://www.reuters.com/graphics/BRITAIN-ECONOMY/movakleekva/chart_eikon.jpg'
     );
@@ -72,10 +69,10 @@ describe('TeamsKlaxon tests', function () {
       ),
     ]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should validate ColumnSet elements', async function () {
+  it('Should validate ColumnSet elements', () => {
     const columns = Elements.ColumnSet([
       Elements.Column(
         [
@@ -90,10 +87,10 @@ describe('TeamsKlaxon tests', function () {
 
     klaxon.makeCard([columns]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should validate ActionSet', async function () {
+  it('Should validate ActionSet', () => {
     klaxon.makeCard([
       Elements.ActionSet([
         Elements.ActionOpenUrl('https://www.google.com', 'Google'),
@@ -101,10 +98,10 @@ describe('TeamsKlaxon tests', function () {
       ]),
     ]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 
-  it('Should validate a buncha elements', async function () {
+  it('Should validate a buncha elements', () => {
     const columns = Elements.ColumnSet([
       Elements.Column(
         [
@@ -138,6 +135,6 @@ describe('TeamsKlaxon tests', function () {
 
     klaxon.makeCard([textBlock, columns, container, imageSet]);
     const isValid = klaxon.cardIsValid();
-    expect(isValid).to.be(true);
+    expect(isValid).toBe(true);
   });
 });

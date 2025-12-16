@@ -1,0 +1,15 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    uses: reuters-graphics/action-workflows/.github/workflows/changesets-release.yaml@main
+    secrets: inherit
+    with:
+      node_version: '20'
+      publish_docs: true
+      docs_directory: './docs'

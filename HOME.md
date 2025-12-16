@@ -26,9 +26,7 @@ Use element constructors to create your card's content...
 ```javascript
 import { Elements } from '@reuters-graphics/teams-klaxon';
 
-const cardContent = [
-  Elements.TextBox('Hello _world_!', { size: 'Large' }),
-];
+const cardContent = [Elements.TextBox('Hello _world_!', { size: 'Large' })];
 ```
 
 ... or create your card content [from scratch](https://adaptivecards.io/explorer/).
@@ -50,7 +48,7 @@ klaxon.makeCard(cardContent);
 
 const response = await klaxon.postCard();
 
-response.status
+response.status;
 // 200
 ```
 
@@ -60,17 +58,17 @@ response.status
 
 Element constructors cover a subset of the available [Adaptive Card schema](https://adaptivecards.io/explorer/AdaptiveCard.html), including:
 
-|_Elements_||
-| -- | -- |
-|TextBlock|✅|
-|Image|✅|
+| _Elements_ |     |
+| ---------- | --- |
+| TextBlock  | ✅  |
+| Image      | ✅  |
 
-|_Containers_||
-| -- | -- |
-|ActionSet|✅|
-|Container|✅|
-|ColumnSet|✅|
-|Column|✅|
-|FactSet|✅|
-|Fact|✅|
-|ImageSet|✅|
+| _Containers_ |     |
+| ------------ | --- |
+| ActionSet    | ✅  |
+| Container    | ✅  |
+| ColumnSet    | ✅  |
+| Column       | ✅  |
+| FactSet      | ✅  |
+| Fact         | ✅  |
+| ImageSet     | ✅  |

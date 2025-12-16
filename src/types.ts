@@ -26,12 +26,12 @@ export type VerticalAlignment = 'Top' | 'Center' | 'Bottom';
 export interface TextBlock {
   type: 'TextBlock';
   text: string;
-  wrap?: Boolean;
+  wrap?: boolean;
   size?: Size;
   weight?: Weight;
-  separator?: Boolean;
+  separator?: boolean;
   color?: Color;
-  isSubtle?: Boolean;
+  isSubtle?: boolean;
   fontType?: FontType;
   spacing?: Spacing;
   height?: 'stretch';
@@ -53,7 +53,7 @@ export interface FactSet {
   type: 'FactSet';
   facts: Fact[];
   spacing?: Spacing;
-  separator?: Boolean;
+  separator?: boolean;
   height?: 'stretch';
   id?: string;
 }
@@ -72,7 +72,7 @@ export type ImageSize = 'Small' | 'Medium' | 'Large';
 export interface Image {
   type: 'Image';
   url: string;
-  separator?: Boolean;
+  separator?: boolean;
   altText?: string;
   horizontalAlignment?: HorizontalAlignment;
   selectAction?: SelectActionOpenUrl;
@@ -86,7 +86,7 @@ export interface ImageSet {
   images: Image[];
   imageSize?: ImageSize;
   spacing?: Spacing;
-  separator?: Boolean;
+  separator?: boolean;
   height?: 'stretch';
   id?: string;
   horizontalAlignment?: HorizontalAlignment;
@@ -104,7 +104,7 @@ export interface ActionSet {
   type: 'ActionSet';
   actions: ActionOpenUrl[];
   spacing?: Spacing;
-  separator?: Boolean;
+  separator?: boolean;
   height?: 'stretch';
   id?: string;
   horizontalAlignment?: HorizontalAlignment;
@@ -127,13 +127,13 @@ export interface Container {
   height?: 'stretch';
   minHeight?: string;
   verticalContentAlignment?: VerticalAlignment;
-  bleed?: Boolean;
+  bleed?: boolean;
 }
 
 export interface Column {
   type: 'Column';
   spacing?: Spacing;
-  separator?: Boolean;
+  separator?: boolean;
   height?: 'stretch';
   id?: string;
   horizontalAlignment?: HorizontalAlignment;
@@ -144,7 +144,7 @@ export interface Column {
    **/
   width?: string | number;
   /** Example: `'50px'` */
-  minHeight: string;
+  minHeight?: string;
   items: (TextBlock | Image | FactSet)[];
 }
 
@@ -153,7 +153,7 @@ export interface ColumnSet {
   columns: [];
   selectAction?: SelectActionOpenUrl;
   spacing?: Spacing;
-  separator?: Boolean;
+  separator?: boolean;
   height?: 'stretch';
   id?: string;
   horizontalAlignment?: HorizontalAlignment;

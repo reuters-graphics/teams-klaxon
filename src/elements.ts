@@ -80,7 +80,7 @@ export const FactSet = (
  */
 export const Image = (
   url: string,
-  openUrl: string,
+  openUrl?: string,
   options?: Omit<types.Image, 'type' | 'url'>
 ) => {
   return {
